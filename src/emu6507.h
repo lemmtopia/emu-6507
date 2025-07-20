@@ -18,9 +18,13 @@ typedef enum STATUS_FLAGS
     SF_MAX          // Number of status flags
 } e_status_flags_t;
 
+#define MEMORY_NORMALIZE_FACTOR 0xF000
+
 // The CPU state struct
 typedef struct __cpu_state 
 {
+    bool8 active;
+
     /* CPU pins  */
     uint16 address;
     uint8 data;
@@ -39,6 +43,7 @@ typedef struct __cpu_state
     uint16 interrupt_vector;    // UNUSED
 } cpu_state_t;
 
+bool8 emu6507_initialize(uint8* program_data, uint16 program_size);
 void emu6507_execute(uint8* program_data, uint16 program_size);
 
 #endif // EMU6507_H
