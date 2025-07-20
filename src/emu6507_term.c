@@ -8,9 +8,11 @@
 
 // include custom .h files
 #include "typedefs.h"
+#include "opcodes.h"
 #include "emu6507.h"
 
 // include custom .c files (for unity build)
+#include "opcodes.c"
 #include "emu6507.c"
 
 typedef struct __emu_bin_file 

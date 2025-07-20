@@ -2,6 +2,7 @@
 #define EMU6507_H
 
 #include "typedefs.h"
+#include "opcodes.h"
 
 // CPU defines
 typedef enum STATUS_FLAGS
@@ -41,6 +42,8 @@ typedef struct __cpu_state
 
     uint16 reset_vector;
     uint16 interrupt_vector;    // UNUSED
+
+    emu_opcode_t opcode;
 } cpu_state_t;
 
 bool8 emu6507_initialize(uint8* program_data, uint16 program_size);
