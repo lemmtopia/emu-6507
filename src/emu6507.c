@@ -46,6 +46,7 @@ void emu6507_execute(uint8* program_data, uint16 program_size)
     while (cpu_state.active)
     {
         cpu_state.data = program_data[cpu_state.address];
+        cpu_state.e_opcode = cpu_state.data;
 
         // TODO(lemmtopia): Access opcode array with the cpu_state.data 
     }

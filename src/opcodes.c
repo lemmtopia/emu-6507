@@ -1,7 +1,7 @@
 #include "opcodes.h"
 
 // TODO(lemmtopia): Add more opcodes
-    globalvar emu_opcode_t opcodes[] = {
+globalvar emu_opcode_t opcodes[] = {
     // Immediate
     { 0x69, 2, 2, "ADC" },     // ADC
     { 0x29, 2, 2, "AND" },     // AND

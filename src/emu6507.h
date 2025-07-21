@@ -43,6 +43,7 @@ typedef struct __cpu_state
     uint16 reset_vector;
     uint16 interrupt_vector;    // UNUSED
 
+    e_emu_opcode_t e_opcode;
     emu_opcode_t opcode;
 } cpu_state_t;
 
