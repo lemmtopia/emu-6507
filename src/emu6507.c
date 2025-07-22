@@ -30,9 +30,22 @@ bool8 emu6507_initialize(uint8* program_data, uint16 program_size)
     return TRUE;
 }
 
-// emu6507_execute(program_data, prorgam_size): 
+// emu6507_execute_single(): Execute a single instruciton.
+void emu6507_execute_single(void) 
+{
+    printf("%04x: %02x", cpu_state.address, cpu_state.e_opcode);
+
+    switch (cpu_state.e_opcode)
+    {
+    // TODO(lemmtopia): implement the opcodes
+    default:
+        break;
+    }
+}
+
+// emu6507_execute_loop(program_data, prorgam_size): 
 //      read and interpret each byte from program_data.
-void emu6507_execute(uint8* program_data, uint16 program_size)
+void emu6507_execute_loop(uint8* program_data, uint16 program_size)
 {
     cpu_state.active = emu6507_initialize(program_data, program_size);
     if (!cpu_state.active) 
@@ -48,6 +61,15 @@ void emu6507_execute(uint8* program_data, uint16 program_size)
         cpu_state.data = program_data[cpu_state.address];
         cpu_state.e_opcode = cpu_state.data;
 
-        // TODO(lemmtopia): Access opcode array with the cpu_state.data 
+        emu6507_execute_single();
+
+        // Pause
+        if (EMU650_TERM && EMU6507_MANUAL_EXEC)
+        {
+            getchar(); 
+        }
+
+        // End the instruction
+        cpu_state.address++;
     }
 }

@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
     }
 
     printf("\n");
-    emu6507_execute(bin_file.data, bin_file.size);
+    emu6507_execute_loop(bin_file.data, bin_file.size);
 
     fclose(f);
     return 0;

@@ -39,6 +39,9 @@ typedef enum __e_emu_opcode
     O_AND_ABS   = 0x2D,
     O_ROL_ABS   = 0x2E,
 
+    // NOP
+    O_NOP_IMPL  = 0xEA,
+
     // TODO(lemmtopia): the rest
 } e_emu_opcode_t;
 

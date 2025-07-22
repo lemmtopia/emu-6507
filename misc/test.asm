@@ -4,7 +4,7 @@
     org $F000
 
 Start:
-    lda #$69
+    nop
 
     org $FFFC
     .word Start

@@ -4,6 +4,9 @@
 #include "typedefs.h"
 #include "opcodes.h"
 
+#define EMU650_TERM (TRUE)
+#define EMU6507_MANUAL_EXEC (TRUE)
+
 // CPU defines
 typedef enum STATUS_FLAGS
 {
@@ -48,6 +51,6 @@ typedef struct __cpu_state
 } cpu_state_t;
 
 bool8 emu6507_initialize(uint8* program_data, uint16 program_size);
-void emu6507_execute(uint8* program_data, uint16 program_size);
+void emu6507_execute_loop(uint8* program_data, uint16 program_size);
 
 #endif // EMU6507_H
